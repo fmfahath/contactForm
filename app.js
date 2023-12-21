@@ -8,9 +8,12 @@ const  nameErrorEl = document.getElementById('name-error');
 const  phoneErrorEl = document.getElementById('phoneNo-error');
 const  emailErrorEl = document.getElementById('email-error');
 const  mesgErrorEl = document.getElementById('msg-error');
+const  submitErrorEl = document.getElementById('submit-error');
 
 //form validation---------------------------
 
+
+//full name validation
 function validateName(){
     let name = document.getElementById('name').value;
     
@@ -29,6 +32,7 @@ function validateName(){
     }
 }
 
+//phone number validation
 function validatePhone(){
     let phoneNo = document.getElementById('phoneNo').value;
 
@@ -46,6 +50,7 @@ function validatePhone(){
     }
 }
 
+//Email validation
 function validateEmail(){
     let email = document.getElementById('email').value;
 
@@ -63,6 +68,7 @@ function validateEmail(){
     }
 }
 
+//message box validation
 function validateMessage(){
     let msg = document.getElementById('message').value;
     let requiredChar = 30;
@@ -78,8 +84,16 @@ function validateMessage(){
     }
 }
 
-
-
+//Submit button validation
+function validateSubmit(){
+    if(!validateName() || !validateEmail() || !validatePhone() || !validateMessage()){
+        submitErrorEl.style.display = 'block';
+        submitErrorEl.innerHTML = "Please fix the error";
+        setTimeout(function(){
+            submitErrorEl.style.display = 'none';
+        },3000);
+    }
+}
 
 
 
