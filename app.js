@@ -6,6 +6,8 @@ const msgEl = document.getElementById('message');
 
 const  nameErrorEl = document.getElementById('name-error');
 const  phoneErrorEl = document.getElementById('phoneNo-error');
+const  emailErrorEl = document.getElementById('email-error');
+const  mesgErrorEl = document.getElementById('msg-error');
 
 //form validation---------------------------
 
@@ -43,6 +45,25 @@ function validatePhone(){
         return true;
     }
 }
+
+function validateEmail(){
+    let email = document.getElementById('email').value;
+
+    if(email.length == 0){
+        emailErrorEl.innerHTML = '*Email required';
+        return false;
+    }
+    else if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        emailErrorEl.innerHTML = '*Email not valid';
+        return false;
+    }
+    else{
+        emailErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        return true;
+    }
+}
+
+
 
 
 
