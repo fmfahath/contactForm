@@ -63,6 +63,20 @@ function validateEmail(){
     }
 }
 
+function validateMessage(){
+    let msg = document.getElementById('message').value;
+    let requiredChar = 30;
+    let leftChar = requiredChar - msg.length; 
+
+    if(leftChar > 0){
+        mesgErrorEl.innerHTML =  leftChar + 'characters required';
+        return false;
+    }
+    else{
+        mesgErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        return true;
+    }
+}
 
 
 
