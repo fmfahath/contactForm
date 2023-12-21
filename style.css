@@ -70,16 +70,12 @@ div{
     position: relative;
 }
 .input-group span{
-    display: block;
-    /* margin-top: -10px; */
-    /* margin-bottom: 10px; */
     position: absolute;
     top:40%;
     right: 5%;
     text-align: right;
     color: red;
     font-size: 13px;
-    /* background-color: aquamarine; */
 }
 
 #submit-error{
@@ -88,4 +84,8 @@ div{
     margin-top: 10px;
     color: red;
     font-size: 13px;
+}
+
+.input-group span i{
+    color: green;
 }
