@@ -92,15 +92,23 @@ function validateSubmit(){
         setTimeout(function(){
             submitErrorEl.style.display = 'none';
         },3000);
+    }else{
+        return true;
     }
+    
 }
 
-
-
-
-
-
-
+//reset input fields
+function reset(){
+    nameEl.value = "";
+    emailEl.value = "";
+    phoneNoEl.value = "";
+    msgEl.value = "";
+    nameErrorEl.innerHTML = "";
+    emailErrorEl.innerHTML = "";
+    phoneErrorEl.innerHTML = "";
+    mesgErrorEl.innerHTML = "";
+}
 
 
 // submir form data to gmail--------------------- 
@@ -130,7 +138,6 @@ function sendEmail(){
 }
 
 formEl.addEventListener('submit', (e) => {
-    console.log('clicke');
     e.preventDefault();
-    // sendEmail();
+    // sendEmail()
 });
