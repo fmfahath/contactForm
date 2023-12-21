@@ -71,7 +71,7 @@ div{
 }
 .input-group span{
     position: absolute;
-    top:40%;
+    bottom: 20px;
     right: 5%;
     text-align: right;
     color: red;

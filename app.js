@@ -53,10 +53,10 @@ function validateEmail(){
         emailErrorEl.innerHTML = '*Email required';
         return false;
     }
-    else if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-        emailErrorEl.innerHTML = '*Email not valid';
-        return false;
-    }
+    // else if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    //     emailErrorEl.innerHTML = '*Email not valid';
+    //     return false;
+    // }
     else{
         emailErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
         return true;
@@ -69,7 +69,7 @@ function validateMessage(){
     let leftChar = requiredChar - msg.length; 
 
     if(leftChar > 0){
-        mesgErrorEl.innerHTML =  leftChar + 'characters required';
+        mesgErrorEl.innerHTML =  leftChar + ' characters required';
         return false;
     }
     else{
