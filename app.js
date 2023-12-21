@@ -18,12 +18,19 @@ function sendEmail(){
         Subject : "New Inquiry Mail",
         Body : bodyMessage,
     }).then(
-      message => alert(message)
-    //   message => alert("Your message has been successfully submitted!")
+      message => {
+        Swal.fire({
+            title: "Thanks!",
+            text: "Message Sent Successfully!",
+            icon: "success"
+          });
+      }
+   
     );
 }
 
 formEl.addEventListener('submit', (e) => {
+    console.log('clicke');
     e.preventDefault();
     sendEmail();
 });
