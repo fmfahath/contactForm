@@ -5,6 +5,7 @@ const phoneNoEl = document.getElementById('phoneNo');
 const msgEl = document.getElementById('message');
 
 const  nameErrorEl = document.getElementById('name-error');
+const  phoneErrorEl = document.getElementById('phoneNo-error');
 
 //form validation---------------------------
 
@@ -26,11 +27,23 @@ function validateName(){
     }
 }
 
+function validatePhone(){
+    let phoneNo = document.getElementById('phoneNo').value;
 
-let text = " hello";
-let result = text.trim();
-console.log(text, text.length);
-console.log(result, result.length);
+    if(phoneNo.length == 0){
+        phoneErrorEl.innerHTML = '*Phone No required';
+        return false;
+    }
+    else if(!phoneNo.match(/^[0-9]{10}$/)){
+        phoneErrorEl.innerHTML = '*Phone No should be 10 digits';
+        return false;
+    }
+    else{
+        phoneErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        return true;
+    }
+}
+
 
 
 
