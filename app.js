@@ -21,11 +21,14 @@ function validateName(){
         nameErrorEl.innerHTML = '*Name required';
         return false;
     }
-    // else if(!name.match(/^[A-Za-a]*\s{1}[A-Za-z]*$/)){
-    //     console.log("full name required",name);
-    //     nameErrorEl.innerHTML = 'Full name required';
+    // else if(name.match(/^(?![^\s]+$).*$/)){
+    //     nameErrorEl.innerHTML = '*Space not allowed';
     //     return false;
     // }
+    else if(!name.match(/[A-Za-a]*\s{1}[A-Za-z]*$/)){
+        nameErrorEl.innerHTML = 'Full name required';
+        return false;
+    }
     else{
         nameErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
         return true;
@@ -40,7 +43,7 @@ function validatePhone(){
         phoneErrorEl.innerHTML = '*Phone No required';
         return false;
     }
-    else if(!phoneNo.match(/^[0-9]{10}$/)){
+    else if(!phoneNo.match(/[0-9]{10}$/)){
         phoneErrorEl.innerHTML = '*Phone No should be 10 digits';
         return false;
     }
@@ -58,10 +61,10 @@ function validateEmail(){
         emailErrorEl.innerHTML = '*Email required';
         return false;
     }
-    // else if(!email.match(/^[A-Za-z]\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
-    //     emailErrorEl.innerHTML = '*Email not valid';
-    //     return false;
-    // }
+    else if(!email.match(/[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/)){
+        emailErrorEl.innerHTML = '*Email not valid';
+        return false;
+    }
     else{
         emailErrorEl.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
         return true;
@@ -139,5 +142,17 @@ function sendEmail(){
 
 formEl.addEventListener('submit', (e) => {
     e.preventDefault();
-    // sendEmail()
+    if(validateSubmit()){
+        // console.log("submitted");
+        sendEmail();
+        reset();
+    }
 });
+
+
+// test---------------------
+
+let text = " ";
+let check = "";
+
+console.log(text == check)
