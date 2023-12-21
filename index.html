@@ -13,11 +13,24 @@
     <div class="container">
         <form>
             <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" placeholder="Your name" required>
-            <input type="email" id="email" placeholder="Your mail ID" required>
-            <input type="text" id="phoneNo" placeholder="Phone No" required>
-            <textarea name="message" id="message" rows="4 " placeholder="How can we help you?"></textarea>
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Your name">
+                <span id="name-error">*Full name required</span>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Your mail ID">
+                <span id="email-error"></span>
+            </div>
+            <div class="input-group">
+                <input type="text" id="phoneNo" placeholder="Phone No" >
+                <span id="phoneNo-error"></span>
+            </div>
+            <div class="input-group">
+                <textarea name="message" id="message" rows="4 " placeholder="How can we help you?"></textarea>
+                <span id="msg-error"></span>
+            </div>
             <button type="submit">Submit</button>
+            <span id="submit-error"></span>
         </form>
     </div>
 
